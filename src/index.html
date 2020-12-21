@@ -1,0 +1,40 @@
+<html>
+  <head>
+  
+  </head>
+  <body>
+
+    <div class="container">
+    <h2 class="center">Products</h2>
+    <br>
+
+
+    <div class="row">
+      <form data-bind="submit: addProduct" class="col s12">
+        <div class="input-field col s6"><label for="productName">Name</label><input data-bind="textInput: name, valueUpdate: 'afterKeydown'" /></div>
+        <div class="input-field col s6"><label for="productSku">Sku</label><input data-bind="textInput: sku, valueUpdate: 'afterKeydown'" /></div>
+        <div class="input-field col s6"><label for="productCategory">Category</label><input data-bind="textInput: category_id, valueUpdate: 'afterKeydown'" /></div>
+        <div class="input-field col s6 class="input-field col s6""><label for="productPrice">Price</label><input data-bind="textInput: unit_price, valueUpdate: 'afterKeydown'" /></div>
+        <button type="submit" class="teal btn-small">add product <i class="material-icons">library_add</i></button>
+      </form>
+      </div>
+     <!-- <input /><button data-bind="click: $root.addProduct" class="btn-small teal">Add Product</button> -->
+<table class="table striped centered">
+    <thead><tr>
+        <th> name</th><th>Sku</th><th>Category</th><th>Unit Price</th><th>Actions</th>
+    </tr></thead>
+    <tbody data-bind="foreach: products">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: sku"></td>
+            <td data-bind="text: category_id"></td>
+            <td data-bind="text: unit_price"></td>
+            <td><button class="orange btn-small"><i class="material-icons">edit</i></button> <button class="red btn-small" data-bind="click: $root.removeProduct"><i class="material-icons">delete_forever</i></button></td>
+        </tr>
+    </div>
+    </tbody>
+</table>
+
+
+  </body>
+  </html>
